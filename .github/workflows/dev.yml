@@ -37,4 +37,4 @@ jobs:
                 uses: actions/upload-artifact@v3
                 with:
                     name: tauri-experiments_linux-version
-                    path: D:\a\tauri-updater-test\tauri-updater-test\src-tauri\target\release\tauri-updater-test.exe
+                    path: ./src-tauri/target/release/tauri-experiments
