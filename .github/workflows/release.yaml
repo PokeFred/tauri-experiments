@@ -1,0 +1,21 @@
+name: Release
+
+on:
+    push:
+        tags:
+            - "v*"
+    workflow_dispatch:
+
+jobs:
+    release:
+        permissions:
+            contents: write
+        strategy:
+            fail-fast: false
+            matrix:
+                platform: [ubuntu-20.04]
+        runs-on: ${{ matrix.platform }}
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
