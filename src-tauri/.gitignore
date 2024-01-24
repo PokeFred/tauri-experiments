@@ -1,0 +1,9 @@
+# IDE Stuff
+.vscode/**
+.idea/**
+
+# Folders
+target/**
+
+# Files
+Cargo.lock
