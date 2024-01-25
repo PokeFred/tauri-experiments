@@ -9,7 +9,11 @@
         "format": "prettier . --write"
     },
     "dependencies": {
-        "@tauri-apps/api": "^1.5.3"
+        "@fortawesome/free-brands-svg-icons": "^6.5.1",
+        "@fortawesome/free-regular-svg-icons": "^6.5.1",
+        "@fortawesome/free-solid-svg-icons": "^6.5.1",
+        "@tauri-apps/api": "^1.5.3",
+        "svelte-awesome": "^3.3.1"
     },
     "devDependencies": {
         "@skeletonlabs/skeleton": "^2.7.1",
