@@ -12,7 +12,10 @@
     },
     "tauri": {
         "allowlist": {
-            "all": false
+            "all": false,
+            "window": {
+                "setPosition": true
+            }
         },
         "bundle": {
             "active": true,
@@ -50,8 +53,8 @@
         "windows": [
             {
                 "title": "Tauri Experiments",
-                "width": 800,
-                "height": 600,
+                "width": 428,
+                "height": 890,
                 "fullscreen": false,
                 "resizable": true
             }
