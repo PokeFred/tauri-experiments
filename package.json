@@ -4,8 +4,10 @@
     "type": "module",
     "private": true,
     "scripts": {
-        "dev": "tauri dev",
-        "build": "tauri build"
+        "frontend:dev": "vite dev",
+        "frontend:build": "vite build",
+        "tauri:dev": "tauri dev",
+        "tauri:build": "tauri build"
     },
     "dependencies": {
         "@tauri-apps/api": "^1.5.3"
