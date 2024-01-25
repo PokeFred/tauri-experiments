@@ -25,19 +25,41 @@ jobs:
                 with:
                     name: build-frontend
                     path: ./build
-
-    release:
-        permissions:
-            contents: write
-        strategy:
-            fail-fast: false
-            matrix:
-                platform: [ubuntu-20.04]
-        runs-on: ${{ matrix.platform }}
-
+    linux-ubuntu-20-04:
+        name: 'Build Linux (Ubuntu 20.04)'
+        needs: build
+        runs-on: ubuntu-20.04
         steps:
             -   name: Checkout Repository
                 uses: actions/checkout@v4
+            -   name: Setup NodeJS
+                uses: actions/setup-node@v4
+                with:
+                    node-version: 18
+    linux-ubuntu-22-04:
+        name: 'Build Linux (Ubuntu 22.04)'
+        needs: build
+        runs-on: ubuntu-22.04
+        steps:
+            -   name: Checkout Repository
+                uses: actions/checkout@v4
+            -   name: Setup NodeJS
+                uses: actions/setup-node@v4
+                with:
+                    node-version: 18
+
+#    release:
+#        permissions:
+#            contents: write
+#        strategy:
+#            fail-fast: false
+#            matrix:
+#                platform: [ubuntu-20.04]
+#        runs-on: ${{ matrix.platform }}
+#
+#        steps:
+#            -   name: Checkout Repository
+#                uses: actions/checkout@v4
 #            -   name: Setup NodeJS
 #                uses: actions/setup-node@v4
 #                with:
