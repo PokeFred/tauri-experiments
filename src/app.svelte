@@ -10,7 +10,7 @@
 </script>
 
 <div>
-    <input type="text" bind:value={name}>
-    <button on:click={greet}>Send</button>
+    <input type="text" bind:value={name} class="border">
+    <button on:click={greet} class="border">Send</button>
 </div>
 <div>{greetMsg}</div>
