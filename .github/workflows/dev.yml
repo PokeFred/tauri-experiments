@@ -7,32 +7,31 @@ on:
 
 jobs:
     linux-ubuntu-20-04:
-        name: 'Build Linux (Ubuntu 20.04)'
+        name: "Build Linux (Ubuntu 20.04)"
         #needs: [build]
         runs-on: ubuntu-20.04
         steps:
-            -   name: Checkout Repository
-                uses: actions/checkout@v4
-            -   name: Setup NodeJS
-                uses: actions/setup-node@v4
-                with:
-                    node-version: 18
-            -   name: Install Rust
-                uses: dtolnay/rust-toolchain@stable
-            -   name: Install System Dependencies
-                run: |
-                    sudo apt update
-                    sudo apt install -y libgtk-3-dev libwebkit2gtk-4.0-dev libayatana-appindicator3-dev librsvg2-dev
-            -   name: Install Frontend Dependencies
-                run: npm install
-            -   name: Build Application
-                run: npm run build
-            -   name: Upload Artifacts
-                uses: actions/upload-artifact@v4
-                with:
-                    name: tauri-experiments_ubuntu-20-04-version
-                    path: ./src-tauri/target/release/tauri-experiments
-
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+            - name: Setup NodeJS
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 18
+            - name: Install Rust
+              uses: dtolnay/rust-toolchain@stable
+            - name: Install System Dependencies
+              run: |
+                  sudo apt update
+                  sudo apt install -y libgtk-3-dev libwebkit2gtk-4.0-dev libayatana-appindicator3-dev librsvg2-dev
+            - name: Install Frontend Dependencies
+              run: npm install
+            - name: Build Application
+              run: npm run build
+            - name: Upload Artifacts
+              uses: actions/upload-artifact@v4
+              with:
+                  name: tauri-experiments_ubuntu-20-04-version
+                  path: ./src-tauri/target/release/tauri-experiments
 #    release:
 #        permissions:
 #            contents: write

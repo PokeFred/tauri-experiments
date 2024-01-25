@@ -1,9 +1,9 @@
-import "./app.css"
-import App from "./app.svelte"
+import './app.css'
+import App from './app.svelte'
 
 const app = new App({
     // @ts-ignore
-    target: document.getElementById("app")
+    target: document.getElementById('app'),
 })
 
 export default app
