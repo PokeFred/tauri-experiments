@@ -3,6 +3,7 @@ const config = {
     printWidth: 255,
     tabWidth: 4,
     useTabs: false,
+    endOfLine: 'lf',
     overrides: [
         {
             files: ['*.js', '*.ts', '*.d.ts', '*.svelte'],
