@@ -1,10 +1,10 @@
 <script lang="ts">
-    import { onMount } from "svelte"
-    import { getName, getTauriVersion, getVersion } from "@tauri-apps/api/app"
+    import { onMount } from 'svelte'
+    import { getName, getTauriVersion, getVersion } from '@tauri-apps/api/app'
 
-    let appName: string = ""
-    let tauriVersion: string = ""
-    let appVersion: string = ""
+    let appName: string = ''
+    let tauriVersion: string = ''
+    let appVersion: string = ''
 
     onMount(async (): Promise<void> => {
         appName = await getName()
