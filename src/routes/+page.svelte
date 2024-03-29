@@ -1,2 +1,18 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+    import { onMount } from "svelte"
+    import { getName, getTauriVersion, getVersion } from "@tauri-apps/api/app"
+
+    let appName: string = ""
+    let tauriVersion: string = ""
+    let appVersion: string = ""
+
+    onMount(async (): Promise<void> => {
+        appName = await getName()
+        tauriVersion = await getTauriVersion()
+        appVersion = await getVersion()
+    })
+</script>
+
+<div>App Name: {appName}</div>
+<div>Tauri Version: {tauriVersion}</div>
+<div>App Version: {appVersion}</div>
